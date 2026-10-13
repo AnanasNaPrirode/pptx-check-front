@@ -8,8 +8,8 @@ COPY package.json package-lock.json ./
 RUN npm ci
 
 COPY . .
+# Creates nginx.conf.generated.template; next.config.ts switches to output: 'export' when it exists
 RUN node scripts/bake-rewrites.mjs
-ENV STATIC_EXPORT=1
 RUN npm run build
 
 FROM nginx:1.27-alpine

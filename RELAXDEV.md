@@ -19,13 +19,13 @@ RelaxDev не читает `vercel.json`. Адрес бэкенда хранит
 
 ## Файлы в корне
 
-- `rewrites.json` — `source: "/api/(.*)"`, `destination` — полный URL бэкенда без завершающего `/`.
+- `rewrites.json` — `source: "/api/*"`, `destination` — полный URL бэкенда без завершающего `/`.
 - `scripts/bake-rewrites.mjs` — подставляет destination вместо `__BACKEND_URL__`.
 - `nginx.conf.template` — `client_max_body_size 6m`, `proxy_read_timeout 180s` (таймаут бэкенда 170 с).
 - `Dockerfile` — `npm run build` при `output: 'export'`, статика копируется из `/app/out`.
 - `nginx.conf.generated.template` в `.gitignore`.
 
-Локально `next dev` проксирует `/api` на `BACKEND_URL` (по умолчанию `http://127.0.0.1:8000`). В production-сборке rewrites Next.js не используются.
+Локально `next dev` проксирует `/api` на `BACKEND_URL` из `.env` (`http://127.0.0.1:8000`). Без этой переменной и без Docker-сборки Next.js проксирует `/api/*` на `https://pptx-check-back.relaxdev.ru`.
 
 ## Панель
 

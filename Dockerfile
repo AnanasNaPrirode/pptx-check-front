@@ -9,6 +9,7 @@ RUN npm ci
 
 COPY . .
 RUN node scripts/bake-rewrites.mjs
+ENV STATIC_EXPORT=1
 RUN npm run build
 
 FROM nginx:1.27-alpine

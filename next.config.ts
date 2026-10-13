@@ -1,17 +1,17 @@
 import type { NextConfig } from "next";
 
-const isDev = process.env.NODE_ENV === "development";
-const backendUrl = (process.env["BACKEND_URL"] ?? "http://127.0.0.1:8000").replace(
-  /\/$/,
-  "",
-);
+const staticExport = process.env.STATIC_EXPORT === "1";
+const backendUrl = (
+  process.env["BACKEND_URL"] ?? "https://pptx-check-back.relaxdev.ru"
+).replace(/\/$/, "");
 
 const nextConfig: NextConfig = {
   allowedDevOrigins: ["127.0.0.1"],
-  // Static export cannot be combined with rewrites, including in `next dev`.
-  // Export is production-only; the dev server proxies /api to the backend.
-  ...(isDev
-    ? {
+  // Docker sets STATIC_EXPORT=1 and proxies /api in nginx.
+  // The Next.js server (local dev and RelaxDev autodetect) proxies /api itself.
+  ...(staticExport
+    ? { output: "export" as const }
+    : {
         async rewrites() {
           return [
             {
@@ -20,8 +20,7 @@ const nextConfig: NextConfig = {
             },
           ];
         },
-      }
-    : { output: "export" as const }),
+      }),
   turbopack: {
     rules: {
       "*.css": {

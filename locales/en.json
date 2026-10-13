@@ -1,0 +1,53 @@
+{
+  "app": {
+    "title": "Presentation Checker",
+    "newCheck": "New check",
+    "language": "Language",
+    "theme": "Theme"
+  },
+  "dropzone": {
+    "title": "Drop a .pptx file",
+    "hint": "or choose one from your computer. One file, up to 5 MB.",
+    "browse": "Choose file",
+    "checking": "Checking the presentation…"
+  },
+  "checks": {
+    "title": "Checks",
+    "loading": "Loading checks…",
+    "loadFailed": "Could not load the check list",
+    "retry": "Retry",
+    "error": "Error",
+    "warning": "Warning"
+  },
+  "errors": {
+    "UNSUPPORTED_TYPE": "Only the .pptx format is allowed",
+    "FILE_TOO_LARGE": "The file is larger than 5 MB",
+    "INVALID_FILE": "The file is damaged or is not a .pptx presentation",
+    "ARCHIVE_TOO_LARGE": "The file is damaged or is not a .pptx presentation",
+    "MACROS_NOT_ALLOWED": "Files with macros are not accepted",
+    "RATE_LIMITED": "Too many requests, try again in {{seconds}} s",
+    "RATE_LIMITED_UNKNOWN": "Too many requests, try again later",
+    "TIMEOUT": "The presentation is too large, split it into several files",
+    "UNKNOWN_CHECK": "The check list is out of date. It has been refreshed, try the check again.",
+    "INTERNAL_ERROR": "Could not check the file"
+  },
+  "report": {
+    "file": "File",
+    "slidesCount": "Slides",
+    "issuesCount": "Issues",
+    "noIssues": "No issues",
+    "presentationIssues": "General issues",
+    "slide": "Slide {{number}}",
+    "slideNumbers": "Slides {{numbers}}",
+    "schematic": "Slide schematic"
+  },
+  "element": {
+    "picture": "Image",
+    "video": "Video",
+    "table": "Table",
+    "shape": "Shape",
+    "group": "Group",
+    "placeholder": "Placeholder",
+    "text": "Text"
+  }
+}

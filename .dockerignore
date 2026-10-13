@@ -1,0 +1,8 @@
+node_modules
+out
+.next
+.git
+.env
+.env.*
+!.env.example
+nginx.conf.generated.template

@@ -14,10 +14,7 @@ export default defineConfig({
     url: "http://localhost:3000",
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
-    env: {
-      ...process.env,
-      NEXT_PUBLIC_API_URL: "",
-    },
+    env: process.env,
   },
   projects: [
     { name: "desktop-chrome", use: { ...devices["Desktop Chrome"], locale: "en-US" } },

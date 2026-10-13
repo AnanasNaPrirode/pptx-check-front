@@ -1,6 +1,6 @@
 import type { ApiErrorCode, CheckDefinition, CheckReport } from "@/lib/types";
 
-export const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "";
+export const API_BASE = "";
 export const MAX_FILE_BYTES = 5 * 1024 * 1024;
 
 export class CheckRequestError extends Error {
